@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Heading } from '../Heading';
 import { Input } from '../Input';
 import * as Styled from './styles';
@@ -38,8 +38,15 @@ export const LoginForm = () => {
             width={'111px'}
             height={'32px'}
             margin={'15px 0px'}
-            onClick={() => {
-              signIn('credentials');
+            disabled={loginName === '' ? true : false}
+            onClick={(e: FormEvent) => {
+              e.preventDefault();
+              if (loginName === '') return;
+              signIn('credentials', {
+                username: loginName,
+                redirect: true,
+                callbackUrl: '/',
+              });
             }}
           >
             ENTER
@@ -56,7 +63,8 @@ export const LoginForm = () => {
             margin={'15px 0px '}
             height={'40px'}
             width={'100%'}
-            onClick={() => {
+            onClick={(e: FormEvent) => {
+              e.preventDefault();
               signIn('google');
             }}
           >
@@ -70,7 +78,8 @@ export const LoginForm = () => {
             margin={'0px'}
             height={'40px'}
             width={'100%'}
-            onClick={() => {
+            onClick={(e: FormEvent) => {
+              e.preventDefault();
               signIn('github');
             }}
           >
