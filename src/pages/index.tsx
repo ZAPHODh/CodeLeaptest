@@ -1,5 +1,6 @@
-import { LobbyForm } from '@/Components/LobbyForm';
-import { Menu } from '@/Components/Menu';
+import { HomeTemplate } from '@/Templates/HomeTemplate';
+import { GetServerSidePropsContext } from 'next';
+import { getSession } from 'next-auth/react';
 import Head from 'next/head';
 
 export default function Home() {
@@ -12,9 +13,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Menu></Menu>
-        <LobbyForm />
+        <HomeTemplate></HomeTemplate>
       </main>
     </>
   );
+}
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 }

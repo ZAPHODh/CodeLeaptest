@@ -1,12 +1,12 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { Cards, CardsProps } from '.';
+import { LoginForm } from '.';
 
 export default {
-  title: 'Cards',
-  component: Cards,
-} as Meta<CardsProps>;
+  title: 'LoginForm',
+  component: LoginForm,
+} as Meta;
 
-const Template: StoryFn<typeof Cards> = (args) => <Cards {...args} />;
+const Template: StoryFn<typeof LoginForm> = () => <LoginForm />;
 
 export const Primary = Template.bind({});
 //default values
