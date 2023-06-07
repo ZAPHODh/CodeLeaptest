@@ -4,7 +4,6 @@ import { Input } from '../Input';
 import * as Styled from './styles';
 import { Roboto } from 'next/font/google';
 import { Button } from '../Button';
-import GoogleIcon from '@mui/icons-material/Google';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { signIn } from 'next-auth/react';
 
@@ -59,21 +58,6 @@ export const LoginForm = () => {
             <Styled.Divisor />
           </Styled.Division>
           <Styled.AnotherButtons>
-            <Button
-              reverse={true}
-              margin={'15px 0px '}
-              height={'40px'}
-              width={'100%'}
-              onClick={(e: FormEvent) => {
-                e.preventDefault();
-                signIn('google');
-              }}
-            >
-              <Styled.Spacing>
-                <GoogleIcon fontSize="inherit" />
-              </Styled.Spacing>
-              Continue with Google
-            </Button>
             <Button
               reverse={true}
               margin={'0px'}
