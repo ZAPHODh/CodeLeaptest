@@ -7,9 +7,10 @@ export const Wrapper = styled.p<{
   padding: string | undefined;
 }>`
     ${({ fontSize, color, maxWidth, padding }) => css`
-        text-align: justify;
+        text-align: left;
         font-size: ${fontSize};
-        max-width: ${maxWidth};
+        width: ${maxWidth};
+        max-width:${maxWidth};
         color: ${color};
         margin: 0;
         padding: ${padding ? padding : 0};

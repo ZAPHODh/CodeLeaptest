@@ -13,9 +13,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
     font-size: 1.4rem;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #1C1C1C;
+    background-color: #DDDDDD;
   }
   .table {
     width: 100%;

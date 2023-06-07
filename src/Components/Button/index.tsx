@@ -13,6 +13,8 @@ export type ButtonProps = {
   disabled?: boolean;
   height?: number | string;
   margin?: string | number;
+  bg?: string;
+  color?: string;
 };
 
 export const Button = ({
@@ -26,9 +28,12 @@ export const Button = ({
   disabled,
   height = '20px',
   margin = '0px',
+  bg = '#7695EC',
+  color = '#7695EC',
 }: ButtonProps) => {
   return (
     <Styled.Wrapper
+      color={color}
       onClick={onClick}
       rounded={rounded}
       width={width}
@@ -39,6 +44,7 @@ export const Button = ({
       height={height}
       className={roboto.className}
       margin={margin}
+      bg={bg}
     >
       {children}
     </Styled.Wrapper>

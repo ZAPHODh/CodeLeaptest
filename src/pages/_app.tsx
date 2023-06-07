@@ -1,6 +1,8 @@
+import { ModalProvider } from '@/context/ModalContext';
 import { GlobalStyles } from '../styles/global-styles';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
+import { EditModalProvider } from '@/context/EditModalContext';
 
 export default function App({
   Component,
@@ -8,8 +10,12 @@ export default function App({
 }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
-      <GlobalStyles />
+      <ModalProvider>
+        <EditModalProvider>
+          <Component {...pageProps} />
+          <GlobalStyles />
+        </EditModalProvider>
+      </ModalProvider>
     </SessionProvider>
   );
 }

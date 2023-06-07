@@ -2,8 +2,9 @@
 
 import styled, { css } from 'styled-components';
 import { Wrapper as Button } from '../Button/styles';
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
     ${() => css`
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +14,6 @@ export const Wrapper = styled.div`
     min-height: 100vh;
     width: 100%;
     background-color: #DDDDDD;
-
     `}
 `;
 export const Form = styled.form`
@@ -22,14 +22,13 @@ export const Form = styled.form`
         align-items: flex-start;
         flex-direction: column;
         width: 500px;
-        /* height: 205px; */
         background-color: white;
         border-radius: 16px;
         border: 1px solid #cccccc;
         padding: 30px;
 
         @media (max-width: 726px) {
-         width: 100% ;
+         width: 100vw;
          min-height: 100vh;
          border-radius: 0px;
          justify-content: center;

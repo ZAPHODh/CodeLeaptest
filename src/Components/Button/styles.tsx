@@ -7,9 +7,21 @@ type Button = {
   reverse: boolean;
   height: number | string;
   margin: string | number;
+  bg: string;
+  color: string;
 };
 export const Wrapper = styled.button<Button>`
-    ${({ rounded, width, fontSize, center, reverse, height, margin }) => css`
+    ${({
+      rounded,
+      width,
+      fontSize,
+      center,
+      reverse,
+      height,
+      margin,
+      bg,
+      color,
+    }) => css`
         width: ${width};
         margin: ${margin};
         display: flex;
@@ -19,14 +31,13 @@ export const Wrapper = styled.button<Button>`
 
         justify-content: ${center ? 'center' : 'space-evenly'};
         border-radius: ${!rounded ? '10px' : '50%'};
-        color: ${reverse ? '#ffffff' : '#7695EC'};
+        color: ${reverse ? '#ffffff' : color};
         transition: all 0.2s;
-        background-color: ${reverse ? '#7695EC;' : 'transparent'};
-        border: 1px solid #7695EC;
+        background-color: ${reverse ? bg : 'transparent'};
+        border: 1px solid ${bg};
         &:hover {
             cursor: pointer;
-            background-color: #3f58e5;
-            color: #ffffff;
+            filter: brightness(1.15);
         }
         &:disabled{
             cursor:no-drop ;
