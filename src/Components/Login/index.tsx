@@ -60,7 +60,7 @@ export const LoginForm = () => {
           <Styled.AnotherButtons>
             <Button
               reverse={true}
-              margin={'0px'}
+              margin={'20px 0px 0px 0px'}
               height={'40px'}
               width={'100%'}
               onClick={(e: FormEvent) => {
